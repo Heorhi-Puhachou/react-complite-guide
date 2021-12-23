@@ -27,6 +27,7 @@ const INIT_EXPENSES = [
 function App() {
 
   const [expenses, setExpenses] = useState(INIT_EXPENSES);
+  const [filteredExpenses, setFilteredExpenses] = useState(expenses);
 
   const addExpenseHandler = expense => {
     // JS REACT MAGIC!!!
