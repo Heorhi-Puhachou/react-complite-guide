@@ -29,7 +29,12 @@ function App() {
   const [expenses, setExpenses] = useState(INIT_EXPENSES);
 
   const addExpenseHandler = expense => {
-    setExpenses([...expenses, expense]);
+    // JS REACT MAGIC!!!
+    // If yo pass a function to this state update function (setExpenses)
+    // this function automatically receive the latest state snapshot (prevExpenses)
+    setExpenses(prevExpenses => {
+      return [expense, ...prevExpenses];
+    });
   };
 
   return (
